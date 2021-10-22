@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <title>Testimonial API - A public list of free user customer testimonials API</title>
+    <link href="/css/miniproject.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/preloader.css">
+
+    <meta name="title" content="Testimonial API - A public list of free user customer testimonials API.">
+    <meta name="description" content="Get free user/customer testimonials data for testing and prototyping. JSON data with Name, ID, Designation, Message, LoremText, and Rating.">
+    <meta name="keywords" content="customer testimonials, user testimonials, testimonial API">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="blogtheorem">
+    <link rel="canonical" href="https://gettestimonials.herokuapp.com">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/testimonial.svg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://gettestimonials.herokuapp.com">
+    <meta property="og:title" content="testimonialapi - A public list of free user customer testimonials API.">
+    <meta property="og:description" content="Get free user/customer testimonials data for testing and prototyping. JSON data with Name, ID, Designation, Message, LoremText, and Rating.">
+    <meta property="og:image" content="images/website-home-page-ss.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gettestimonials.herokuapp.com">
+    <meta property="twitter:title" content="testimonialapi - A public list of free user customer testimonials API.">
+    <meta property="twitter:description" content="Get free user/customer testimonials data for testing and prototyping. JSON data with Name, ID, Designation, Message, LoremText, and Rating.">
+    <meta property="twitter:image" content="images/website-home-page-ss.png">
+    <meta name="next-head-count" content="25">
+    
+    <style>
+        #preloader {
+            background: #000 url(../images/preloader.gif) no-repeat center center;
+            background-size: 15%;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 10000;
+        }
+    </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1031.0" data-gr-ext-installed="">
+    <div id="preloader"></div>
+    <div id="__next">
+        <div class="sm:w-full mx-auto bg-indigo-500 text-white ">
+            <header class="text-gray-600 body-font text-white	md:w-4/6 sm:w-full mx-auto">
+                <div class="container flex flex-wrap p-3 flex-col md:flex-row">
+                    <a class="flex title-font font-medium items-center text-white justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-chat-quote" viewBox="0 0 16 16">
+                            <path
+                                d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z" />
+                            <path
+                                d="M7.066 6.76A1.665 1.665 0 0 0 4 7.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 0 0 .6.58c1.486-1.54 1.293-3.214.682-4.112zm4 0A1.665 1.665 0 0 0 8 7.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 0 0 .6.58c1.486-1.54 1.293-3.214.682-4.112z" />
+                        </svg>
+                        <span class="ml-3 text-xl text-white">testimonial API</span>
+                    </a>
+                </div>
+            </header>
+        </div>
+        <div class="md:w-4/6 sm:w-full mx-auto p-4">
+            <section class="text-gray-600 body-font md:mt-10 sm:mt-2">
+                <div class="container flex md:flex-row flex-col items-center ">
+                    <div class="lg:flex-grow flex flex-col md:items-start mb-16 md:mb-0 sm:text-center md:text-left">
+                        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 ">Get list of random
+                            user &nbsp;<span class="text-indigo-700 inline-block">Testimonial data.</span>
+                        </h1>
+                        <p class="mb-8 leading-relaxed">Tired of copy and pasting lorem user's testimonial text which
+                            doesn't give the feel of authenticity, don't worry try testimonial API to get dummy
+                            testimonial data that includes user id, name, location, designation, avatar, message
+                            and rating .
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="/api">
+                                <button
+                                    class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Get
+                                    all testimonial JSON data</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:max-w-lg lg:w-full">
+                        <img src="/images/hero_img.svg"
+                            alt="Programming Images | Free Vectors, Stock Photos &amp;amp; PSD" jsname="HiaYvf"
+                            jsaction="load:XAeZkd;" class="n3VNCb" data-noaft="1"
+                            style="width: 338px; height: 338px; margin: 0px;">
+                    </div>
+                </div>
+            </section>
+            <section class="text-gray-600 body-font">
+                <div class="container py-8 mx-auto">
+                    <div class="flex flex-col text-center w-full mt-5 mb-10">
+                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Free Testimonials API
+                            Data for testing and prototyping.</h1>
+                        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Contain upto 10 users data, simple use a
+                            GET HTTP request on the link. Individual of one data can be fetch using respective ID.</p>
+                    </div>
+                    <div class="flex flex-wrap -m-4">
+                        <div class="lg:w-1/3 sm:w-1/2 p-4">
+                            <div class="flex relative">
+                                <div
+                                    class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white text-center card">
+                                    <div class="mb-5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 mx-auto" width="50"
+                                            height="50" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+                                            <path
+                                                d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+                                        </svg>
+                                    </div>
+                                    <h1 class="title-font text-lg font-medium text-gray-900 mb-3">REST API
+                                        <!-- -->
+                                    </h1>
+                                    <p class="leading-relaxed">Restful online API, publicly accessible via https get
+                                        method.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/3 sm:w-1/2  p-4">
+                            <div class="flex relative">
+                                <div
+                                    class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white text-center card">
+                                    <div class="mb-5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 mx-auto" width="50"
+                                            height="50" fill="currentColor" class="bi bi-file-earmark-code"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+                                            <path
+                                                d="M8.646 6.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 9 8.646 7.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 9l1.647-1.646a.5.5 0 0 0 0-.708z" />
+                                        </svg>
+                                    </div>
+                                    <h1 class="title-font text-lg font-medium text-gray-900 mb-3">JSON DATA
+                                        <!-- -->
+                                    </h1>
+                                    <p class="leading-relaxed">Contain neccessary data required to build testimonials.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/3 sm:w-1/2  p-4">
+                            <div class="flex relative">
+                                <div
+                                    class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white text-center card">
+                                    <div class="mb-5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 mx-auto" width="50"
+                                            height="50" fill="currentColor" class="bi bi-alarm" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z" />
+                                            <path
+                                                d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1h-3zm1.038 3.018a6.093 6.093 0 0 1 .924 0 6 6 0 1 1-.924 0zM0 3.5c0 .753.333 1.429.86 1.887A8.035 8.035 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5zM13.5 1c-.753 0-1.429.333-1.887.86a8.035 8.035 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1z" />
+                                        </svg>
+                                    </div>
+                                    <h1 class="title-font text-lg font-medium text-gray-900 mb-3"> 24/7 uptime</h1>
+                                    <p class="leading-relaxed">Fast response time in your testing &amp; developement
+                                        phases.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="text-gray-600 body-font py-2">
+                <div class="container flex flex-wrap  mx-auto items-center">
+                    <h2 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Introduction</h2>
+                    <p class="text-lg">GET method is used to appends form data to the URL in name or value pair. If you
+                        use GET, the length of URL will remain limited. It helps users to submit the bookmark the
+                        result. GET is better for the data which does not require any
+                        security or having images or word documents. Get 10 results.</p>
+                    <a href="/api" class="pt-4 ">
+                        <button class="flex md:inline-flex text-white bg-indigo-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-indigo-600 rounded text-sm md:text-base lg:text-lg">GET
+                              https://gettestimonials.herokuapp.com/api
+                            <!-- -->
+                        </button>
+                    </a>
+                </div>
+            </section>
+            <section class="text-gray-600 body-font">
+                <div class="container flex flex-wrap  mx-auto items-center">
+                    <h2 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 mt-3 mb-5">Response
+                        <!-- -->
+                    </h2>
+                    <a href="/images/full_response.png">
+                        <img src="images/full_response.png" alt="response">
+                    </a>
+                </div>
+            </section>
+            <section class="text-gray-600 body-font py-8">
+                <div class="container flex flex-wrap  mx-auto items-center">
+                    <h2 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Get Single user
+                        <!-- -->
+                    </h2>
+                    <p class="leading-relaxed text-base">Based on ID from 1 to 10 get a particular user data. Note here
+                        odd ID are male person testimonial data while even ID are female testimonial data. Below is
+                        exmaple of fetching the first user data.</p>
+                    <a href="/api/1" class="py-5" aria-label="single user">
+                        <button
+                            class="inline-flex text-white bg-indigo-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-indigo-600 rounded text-sm md:text-base lg:text-lg">GET
+                            &ensp; https://gettestimonials.herokuapp.com/api/1
+                            <!-- -->
+                        </button>
+                    </a>
+                    <a href="/images/one_response.png">
+                        <img src="images/one_response.png" alt="single user testimonial">
+                    </a>
+                </div>
+            </section>
+            <section class="text-gray-600 body-font">
+                <div class="container px-2 py-6 mx-auto">
+                    <div class="flex flex-wrap w-full mb-10 flex-col items-center text-center">
+                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Different Language
+                            JSON fetch Code Example
+                            <!-- -->
+                        </h1>
+                    </div>
+                    <div class="flex flex-wrap -m-4">
+                        <div class="xl:w-1/2 md:w-1/2 p-2">
+                            <div class="border border-gray-200 md:p-6 p-4 rounded-lg">
+                                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Javascript
+                                    <!-- -->
+                                </h2>
+                                <a href="/images/code1_javascript.png">
+                                    <img src="images/code1_javascript.png" alt="code-1 image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="xl:w-1/2 md:w-1/2 p-2">
+                            <div class="border border-gray-200 md:p-6 p-4 rounded-lg">
+                                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Nodejs Request</h2>
+                                <a href="/images/code2_nodeJS.png">
+                                    <img src="images/code2_nodeJS.png" alt="code-2 image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="xl:w-1/2 md:w-1/2 p-2">
+                            <div class="border border-gray-200 md:p-6 p-4 rounded-lg">
+                                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">JQuery</h2>
+                                <a href="/images/code3_jQuery.png">
+                                    <img src="images/code3_jQuery.png" alt="code-3 image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="xl:w-1/2 md:w-1/2 p-2">
+                            <div class="border border-gray-200 md:p-6 p-4 rounded-lg">
+                                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Java OkHttp</h2>
+                                <a href="/images/code4_java.png">
+                                    <img src="images/code4_java.png" alt="code-4 image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="text-gray-600 body-font">
+                <div class="container py-4 mx-auto">
+                    <div class="text-center mb-6">
+                        <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Entire
+                            JSON API
+                            <!---->
+                        </h1>
+                    </div>
+                    <div class="flex flex-wrap sm:mx-auto sm:mb-2 -mx-2 cursor-pointer">
+                        <div class="p-1 md:p-2 w-full">
+                            <div
+                                class="bg-gray-100 rounded flex px-2 py-3 md:px-4 md:py-6 h-full items-center hover:bg-blue-50">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-2 md:mr-4" <!--
+                                    above -->
+                                    viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14">
+                                    </path>
+                                    <path d="M22 4L12 14.01l-3-3">
+                                    </path>
+                                </svg>
+                                <span class="title-font font-medium text-xs md:text-base lg:text-lg">GET &ensp;
+                                    https://gettestimonials.herokuapp.com/api
+                                    <!-- -->
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-1 md:p-2 w-full xl:w-1/2">
+                            <div class="bg-gray-100 rounded flex p-2 md:p-4 h-full items-center hover:bg-blue-50">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-2 md:mr-4"
+                                    viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14">
+                                    </path>
+                                    <path d="M22 4L12 14.01l-3-3">
+                                    </path>
+                                </svg>
+                                <span class="title-font font-medium text-xs md:text-sm lg:text-base">GET
+                                    https://gettestimonials.herokuapp.com/api/1
+                                    <!-- -->
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-1 md:p-2 w-full xl:w-1/2">
+                            <div class="bg-gray-100 rounded flex p-2 md:p-4 h-full items-center hover:bg-blue-50">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-2 md:mr-4"
+                                    viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14">
+                                    </path>
+                                    <path d="M22 4L12 14.01l-3-3">
+                                    </path>
+                                </svg>
+                                <span class="title-font font-medium text-xs md:text-sm lg:text-base">GET
+                                    https://gettestimonials.herokuapp.com/api/2
+                                    <!-- -->
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-1 md:p-2 w-full xl:w-1/2">
+                            <div class="bg-gray-100 rounded flex p-2 md:p-4 h-full items-center hover:bg-blue-50">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-2 md:mr-4"
+                                    viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14">
+                                    </path>
+                                    <path d="M22 4L12 14.01l-3-3">
+                                    </path>
+                                </svg>
+                                <span class="title-font font-medium text-xs md:text-sm lg:text-base">GET
+                                    https://gettestimonials.herokuapp.com/api/3
+                                    <!-- -->
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-1 md:p-2 w-full xl:w-1/2">
+                            <div class="bg-gray-100 rounded flex p-2 md:p-4 h-full items-center hover:bg-blue-50">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-2 md:mr-4"
+                                    viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14">
+                                    </path>
+                                    <path d="M22 4L12 14.01l-3-3">
+                                    </path>
+                                </svg>
+                                <span class="title-font font-medium text-xs md:text-sm lg:text-base">
+                                    <!-- -->GET https://gettestimonials.herokuapp.com/api/4
+                                    <!-- -->
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-1 md:p-2 w-full xl:w-1/2">
+                            <div class="bg-gray-100 rounded flex p-2 md:p-4 h-full items-center hover:bg-blue-50">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-2 md:mr-4"
+                                    viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14">
+                                    </path>
+                                    <path d="M22 4L12 14.01l-3-3">
+                                    </path>
+                                </svg>
+                                <span class="title-font font-medium text-xs md:text-sm lg:text-base">GET
+                                    https://gettestimonials.herokuapp.com/api/5
+                                    <!-- -->
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-1 md:p-2 w-full xl:w-1/2">
+                            <div class="bg-gray-100 rounded flex p-2 md:p-4 h-full items-center hover:bg-blue-50">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-2 md:mr-4"
+                                    viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14">
+                                    </path>
+                                    <path d="M22 4L12 14.01l-3-3">
+                                    </path>
+                                </svg>
+                                <span class="title-font font-medium text-xs md:text-sm lg:text-base">GET
+                                    https://gettestimonials.herokuapp.com/api/6
+                                    <!-- -->
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-1 md:p-2 w-full xl:w-1/2">
+                            <div class="bg-gray-100 rounded flex p-2 md:p-4 h-full items-center hover:bg-blue-50">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-2 md:mr-4"
+                                    viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14">
+                                    </path>
+                                    <path d="M22 4L12 14.01l-3-3">
+                                    </path>
+                                </svg>
+                                <span class="title-font font-medium text-xs md:text-sm lg:text-base">GET
+                                    https://gettestimonials.herokuapp.com/api/7
+                                    <!-- -->
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-1 md:p-2 w-full xl:w-1/2">
+                            <div class="bg-gray-100 rounded flex p-2 md:p-4 h-full items-center hover:bg-blue-50">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-2 md:mr-4"
+                                    viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14">
+                                    </path>
+                                    <path d="M22 4L12 14.01l-3-3">
+                                    </path>
+                                </svg>
+                                <span class="title-font font-medium text-xs md:text-sm lg:text-base">GET
+                                    https://gettestimonials.herokuapp.com/api/8
+                                    <!-- -->
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-1 md:p-2 w-full xl:w-1/2">
+                            <div class="bg-gray-100 rounded flex p-2 md:p-4 h-full items-center hover:bg-blue-50">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-2 md:mr-4"
+                                    viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14">
+                                    </path>
+                                    <path d="M22 4L12 14.01l-3-3">
+                                    </path>
+                                </svg>
+                                <span class="title-font font-medium text-xs md:text-sm lg:text-base">GET
+                                    https://gettestimonials.herokuapp.com/api/9
+                                    <!-- -->
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-1 md:p-2 w-full xl:w-1/2">
+                            <div class="bg-gray-100 rounded flex p-2 md:p-4 h-full items-center hover:bg-blue-50">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-2 md:mr-4"
+                                    viewBox="0 0 24 24">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14">
+                                    </path>
+                                    <path d="M22 4L12 14.01l-3-3">
+                                    </path>
+                                </svg>
+                                <span class="title-font font-medium text-xs md:text-sm lg:text-base">GET
+                                    https://gettestimonials.herokuapp.com/api/10
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="text-gray-600 body-font">
+                <h1 class="text-3xl font-medium title-font text-gray-900 mb-12 text-center">Testimonials Data Example
+                </h1>
+                <div class="flex flex-wrap -m-4">
+                    <div class="p-4 md:w-1/2 w-full">
+                        <div class="h-full bg-gray-100 p-8 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                                <path
+                                    d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                                </path>
+                            </svg>
+                            <p class="leading-relaxed mb-6">We have been using product for last one year, and I have to
+                                say that it has transformed the way we do business. Communication with team and support
+                                is brilliant. Thank you for awesome service.
+                            </p>
+                            <a class="">
+                                <div class="inline-flex items-center">
+                                    <img alt="testimonial" src="images/1.jpg"
+                                        class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                                    <span class="flex-grow flex flex-col pl-4">
+                                        <span class="title-font font-medium text-gray-900">
+                                            Lance Jarvis
+                                        </span>
+                                        <span class="text-gray-500 text-xs">GENERAL MANAGER</span>
+                                    </span>
+                                </div>
+                                <div class="mt-5 md:mt-0">
+                                    <button id="t1_btn"
+                                        class="play inline-flex text-white bg-indigo-500 border-0 py-2 my-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                                        <span class="mx-1">Play Audio</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" id="t1_btn_svg" class="h-7 w-7"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </button>
+                                    <audio class="audio-element-female" id="audio_1">
+                                        <source src="/audio/public_audio_1.mp3">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="p-4 md:w-1/2 w-full">
+                        <div class="h-full bg-gray-100 p-8 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                                <path
+                                    d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                                </path>
+                            </svg>
+                            <p class="leading-relaxed mb-6">It has changed the way I used the website. Product lets you
+                                create anything you envision and it does it so easy and flawless. I can't imagine not
+                                working with the service
+                            </p>
+                            <a class="">
+                                <div class="inline-flex items-center">
+                                    <img alt="testimonial" src="images/2.jpg"
+                                        class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                                    <span class="flex-grow flex flex-col pl-4">
+                                        <span class="title-font font-medium text-gray-900">Juliet Wright </span>
+                                        <span class="text-gray-500 text-xs">TECHNICAL WRITER </span>
+                                    </span>
+                                </div>
+
+                                <div class="mt-5 md:mt-0">
+                                    <button id="t2_btn"
+                                        class="play inline-flex text-white bg-indigo-500 border-50 py-2 my-2 px-6 focus:outline-white hover:bg-indigo-600 rounded text-lg">
+                                        <span class="mx-1">Play Audio</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" id="t2_btn_svg" class="h-7 w-7"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </button>
+                                    <audio class="audio-element-female" id="audio_2">
+                                        <source src="/audio/public_audio_2.mp3">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </section>
+
+        <section class="text-gray-600 body-font container ">
+            <div class="md:w-4/6 sm:w-full mx-auto p-4 m-auto">
+                <div class=" flex flex-col mx-auto sm:flex-row items-center items-start">
+                    <p class="flex-grow px-3 mx-auto leading-relaxed text-gray-900 text-center text-indigo-600 ">If you
+                        feel the service help you achieve your work, do support with small donation by buy a cup of
+                        coffee, this help to make even better software service and deliever to you. Thank you for your
+                        time and using the page.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+    </footer>
+    </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> bfb4f64d8bb7155892852306dc69859bafae1cc6
+    <script>
+        const loader = document.getElementById('preloader');
+        window.addEventListener('load', () => {
+            loader.style.display = "none";
+        })
+    </script>
+    <script src="javascript/script.js"></script>
+</body>
+
+</html>

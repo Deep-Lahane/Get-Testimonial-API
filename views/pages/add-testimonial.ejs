@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Testimonial</title>
+    <link href="/css/miniproject.css" rel="stylesheet" type="text/css">
+    <style>
+        form {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 600px;
+        }
+
+        @media only screen and (max-width: 650px) {
+            form {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="flex justify-center items-center">
+    <form action="" enctype="multipart/form-data"
+        class="w-full my- mx-2 my-4 max-w-lg bg-white outline-none ring-2 ring-offset-2 ring-blue-500 rounded">
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="ID">
+                    ID
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:ring-black-600  focus:shadow-outline"
+                    id="ID" type="number" required placeholder="10">
+            </div>
+            <div class="w-full md:w-2/3 px-3">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    Name
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:ring-black-600  focus:shadow-outline"
+                    id="name" type="text" required placeholder="Text input">
+            </div>
+        </div>
+
+        <div class="flex flex-wrap -mx-3 mb-2">
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="location">
+                    Location
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:ring-black-600  focus:shadow-outline"
+                    id="location" type="text" required placeholder="Text input">
+            </div>
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="designation">
+                    Designation
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:ring-black-600  focus:shadow-outline"
+                    id="designation" type="text" required placeholder="Text input">
+            </div>
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="rating">
+                    Rating
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:ring-black-600  focus:shadow-outline"
+                    id="rating" type=number step=0.1 required placeholder="4.5">
+            </div>
+        </div>
+
+        <div class="flex flex-wrap mx-0 my-5">
+            <label class="w-full block text-gray-700 text-sm font-bold  mb-2 md:mb-0" for="message">
+                Message
+            </label>
+            <textarea
+                class="shadow form-textarea mt-1 block w-full border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:ring-black-600  focus:shadow-outline"
+                rows="5" id="message" required placeholder="Textarea"></textarea>
+        </div>
+
+        <hr class="mb-4">
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="file">
+                Upload Avatar
+            </label>
+            <input type="file" id="avatar" accept="image/*" required
+                class="text-blue-900 font-medium shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:ring-black-600  focus:shadow-outline" />
+        </div>
+
+        <hr class="mb-4">
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="file">
+                Upload Audio
+            </label>
+            <input type="file" id="audio" accept="audio/*" required
+                class="text-blue-900 font-medium shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:ring-black-600  focus:shadow-outline" />
+        </div>
+
+
+        <div class="w-100 flex items-center justify-between">
+            <button class="bg-gray-200 rounded flex py-3 px-5 h-full items-center hover:bg-blue-100"
+                onclick="addTestimonial()">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                    class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14">
+                    </path>
+                    <path d="M22 4L12 14.01l-3-3">
+                    </path>
+                </svg>
+                <span>ADD Testimonial</span>
+            </button>
+        </div>
+
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+        })
+
+        const ID = document.getElementById('ID');
+        const name = document.getElementById('name');
+        const loc = document.getElementById('location');
+        const designation = document.getElementById('designation');
+        const rating = document.getElementById('rating');
+        const message = document.getElementById('message');
+
+        const avatar = document.getElementById('avatar');
+        const audio = document.getElementById('audio')
+
+        let ID_value = "", name_value = "", location_value = "", designation_value = "", rating_value = "", message_value = "";
+        let avatar_file = "", audio_file = "";
+
+        let xhr_response = "";
+
+
+        ID.addEventListener('change', (e) => {
+            ID_value = e.target.value;
+            console.log(e.target.value)
+        })
+
+        name.addEventListener('change', (e) => {
+            name_value = e.target.value;
+            console.log(e.target.value)
+            console.log(e.target.value)
+        })
+
+        loc.addEventListener('change', (e) => {
+            location_value = e.target.value;
+            console.log(e.target.value)
+        })
+
+        designation.addEventListener('change', (e) => {
+            designation_value = e.target.value;
+            console.log(e.target.value)
+        })
+
+        rating.addEventListener('change', (e) => {
+            if(e.target.value>0){
+                alert("rating should br in 0-5 range");
+                rating_value= e.target.value = 5;
+                return;
+            }
+            rating_value = e.target.value;
+            console.log(e.target.value)
+        })
+
+        message.addEventListener('change', (e) => {
+            message_value = e.target.value;
+            console.log(e.target.value)
+        })
+
+        avatar.addEventListener('change', (e) => {
+            avatar_file = e.target.files[0];
+            console.log(avatar_file)
+        })
+
+        audio.addEventListener('change', (e) => {
+            audio_file = e.target.files[0];
+            console.log(audio_file)
+        })
+
+        function addTestimonial() {
+
+            if (!ID_value || !name_value || !location_value || !designation_value || !message_value || !rating_value || !avatar_file || !audio_file) {
+                console.log({ status: "failed!", message: "All required filed not present" });
+                return;
+            }
+            else {
+                let formData = new FormData();
+                formData.append("id", ID_value);
+                formData.append("name", name_value);
+                formData.append("location", location_value);
+                formData.append("designation", designation_value);
+                formData.append("rating", rating_value);
+                formData.append("message", message_value);
+                formData.append("avatar", avatar_file);
+                formData.append("audio", audio_file);
+
+                // xhr network call :-
+                const xhr = new XMLHttpRequest();
+
+                // handle error
+                xhr.upload.onerror = function () {
+                    showToast(`Error in upload: ${xhr.status}.`);
+                    fileInput.value = ""; // reset the input
+                };
+
+                // listen for response which will give the link
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == XMLHttpRequest.DONE) {
+                        xhr_response = xhr.responseText;
+                    }
+                };
+
+                const api_key = '<%= process.env.API_KEY %>';
+                const url = `/api/add-testimonial?api_key=${api_key}`;
+                xhr.open("POST", url);
+                xhr.send(formData);
+
+                ID_value=""; 
+                name_value="";
+                location_value="";
+                designation_value="";
+                message_value="";
+                rating_value="";
+                avatar_file="";
+                audio_file="";
+
+                ID.value = "";
+                name.value = "";
+                loc.value= "";
+                designation.value="";
+                rating.value="";
+                message.value="";
+                avatar.value="";
+                audio.value="";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

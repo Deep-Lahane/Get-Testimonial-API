@@ -1,0 +1,31 @@
+{
+  "name": "gettestimonials-api",
+  "version": "1.0.0",
+  "description": "A public list of free user customer testimonials API.",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "API",
+    "Testimonials",
+    "CustomerReviews"
+  ],
+  "author": "Parshuram Nikam <parshunikam0612@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "gridfs-stream": "^1.1.1",
+    "mongoose": "^5.13.11",
+    "multer": "^1.4.3",
+    "multer-gridfs-storage": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
