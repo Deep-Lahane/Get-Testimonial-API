@@ -2,7 +2,7 @@ import UserTestimonials from "../model/userTestimonial.model.js";
 
 const getAllTestimonials = async (req, res) => {
     try {
-        UserTestimonials.find({}, { '_id': 0 })
+        UserTestimonials.find({}, { '_id': 0, '__v': 0 })
             .sort({ id: 1 })
             .sort({ lorem: -1 })
             .then((data) => {

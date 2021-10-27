@@ -35,7 +35,7 @@ Tired of copy and pasting lorem user's testimonial text which doesn't give the f
 
 Based on ID from 1 to 10 get a particular user data. Note here odd ID are male person testimonial data while even ID are female testimonial data. Below is exmaple of fetching the first user data.
 
-![one](./public/images/one_response_in_readme.png)
+![one](./public/images/one_response.png);
 
 ## API implementation
 
