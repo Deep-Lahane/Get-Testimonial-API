@@ -8,7 +8,7 @@ env_vars.config();
 
 var storage = new GridFsStorage({
     url: process.env.CONN_URL,
-    options: { useUnifiedTopology: true },
+    options: { useUnifiedTopology: true }, //to avoid deprication warning
     file: (req, file) => {
         return {
             bucketName: "uploads",
